@@ -1,7 +1,6 @@
 {
   "name": "semana-12",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest --color",
@@ -20,5 +19,17 @@
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seba20sa/QA-week-13-integration-test.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/seba20sa/QA-week-13-integration-test/issues"
+  },
+  "homepage": "https://github.com/seba20sa/QA-week-13-integration-test#readme",
+  "description": ""
 }
