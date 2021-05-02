@@ -62,9 +62,49 @@ describe('complexOperation - Unit Tests', () => {
   });
 
   decsribe('calculateArea', () => {
-    it('first test for calculateArea', () => {
+
+    it('test for undefined figure', () => {
+      expect(complexOperations.calculateArea()).tobe('undefined is not supported');
 
     });
+
+    it('test for wrong figure', () => {
+      expect(complexOperations.calculateArea('dog', 1, 3))
+      .tobe('dog is not supported');
+    });
+
+    it('test for no measurements', () => {
+      expect(complexOperations.calculateArea('circle'))
+      .tobe('number1 and number2 should be numbers');
+    });
+
+    it('test for first wrong measurements', () => {
+      expect(complexOperations.calculateArea('circle', 'dog', 3))
+      .tobe('number1 and number2 should be numbers');
+    });
+
+    it('test for second wrong measurements', () => {
+      expect(complexOperations.calculateArea('circle', 2, 'lizzard'))
+      .tobe('number1 and number2 should be numbers');
+    });
+
+    it('test with correct measurements', () => {
+      expect(complexOperations.calculateArea('square', 2, 5)).toEqual(10);
+    });
+    it('test with correct measurements', () => {
+      expect(complexOperations.calculateArea('circle', 3, 1)).toEqual(3);
+    });
+    it('test with correct measurements', () => {
+      expect(complexOperations.calculateArea('triangle', 3, 1)).toEqual(3);
+    });
+    it('test with correct measurements', () => {
+      expect(complexOperations.calculateArea('rectangle', 3, 1)).toEqual(3);
+    });
+
+    it('test with correct measurements', () => {
+      expect(complexOperations.calculateArea('square', 3, 1)).not.toEqual(89);
+    });
+
   });
 
   decsribe('sumGratherThan', () => {
