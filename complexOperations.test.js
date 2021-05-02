@@ -108,9 +108,36 @@ describe('complexOperation - Unit Tests', () => {
   });
 
   decsribe('sumGratherThan', () => {
-    it('first test for sumGratherThan', () => {
-
+    it('test with wrong param', () => {
+      expect(complexOperations.sumGratherThan())
+      .toBe('The params should be numbers');
     });
+
+    it('test with wrong param', () => {
+      expect(complexOperations.sumGratherThan('dog', 2, 5))
+      .toBe('The params should be numbers');
+    });
+
+    it('test with wrong param', () => {
+      expect(complexOperations.sumGratherThan(1, 'cat', 5))
+      .toBe('The params should be numbers');
+    });
+
+    it('test with wrong param', () => {
+      expect(complexOperations.sumGratherThan(1, 4, 'lizzard'))
+      .toBe('The params should be numbers');
+    });
+
+    it('test with real params', () => {
+      expect(complexOperations.sumGratherThan(1, 2, 7))
+      .toBe('3 is less than 7');
+    });
+
+    it('test with real params', () => {
+      expect(complexOperations.sumGratherThan(2, 8, 3))
+      .toBe('10 is grather than 3');
+    });
+
   });
 
   decsribe('intersectionBetweenArrays', () => {
