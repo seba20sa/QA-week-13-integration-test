@@ -1,11 +1,64 @@
 import 'jest';
 import * as complexOperations from './complexOperations';
+// import * as basicOperations from './basicOperations';
 
 describe('complexOperation - Unit Tests', () => {
   decsribe('checkEmail', () => {
-    it('first test for checkEmail', () => {
-      
+
+
+    it('test for undefined email', () => {
+      expect(complexOperations.checkEmail()).toBe(
+        'The email should be an string'
+      );      
     });
+
+    it('test for empty email', () => {
+      expect(complexOperations.checkEmail('')).toBe(
+        'The email should be an string'
+      );      
+    });
+
+    it('test for wrongly formated email', () => {
+      expect(complexOperations.checkEmail(42)).toBe(
+        'The email should be an string'
+      );      
+    });
+
+    it('test for wrongly formated email', () => {
+      expect(complexOperations.checkEmail('seba20sa')).toBe(
+        'The email is invalid'
+      );      
+    });
+
+    it('test for wrongly formated email', () => {
+      expect(complexOperations.checkEmail('@')).toBe(
+        'The email is invalid'
+      );      
+    });
+
+    it('test for wrongly formated email', () => {
+      expect(complexOperations.checkEmail('@.com')).toBe(
+        'The email is invalid'
+      );      
+    });
+
+    it('test for wrongly formated email', () => {
+      expect(complexOperations.checkEmail('seba20sa@.com')).toBe(
+        'The email is invalid'
+      );      
+    });
+
+    it('test for wrongly formated email', () => {
+      expect(complexOperations.checkEmail('seba20sa@.com')).toBe(
+        'The email is invalid'
+      );      
+    });
+    it('test for wrongly formated email', () => {
+      expect(complexOperations.checkEmail('seba20sa.com')).toBe(
+        'The email is invalid'
+      );      
+    });
+    
   });
 
   decsribe('calculateArea', () => {
