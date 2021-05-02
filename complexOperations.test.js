@@ -164,8 +164,45 @@ describe('complexOperation - Unit Tests', () => {
   });
 
   decsribe('sortArrayOfObjectsByKey', () => {
-    it('first test for sortArrayOfObjectsByKey', () => {
+    it('Test for sortArrayOfObjectsByKey with wrong params', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey(undefined, 'pet')
+      .tobe('The param should be an array'));
+    });
 
+    it('Test for sortArrayOfObjectsByKey with wrong params', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey()
+      .tobe('The param should be an array'));
+    });
+
+
+    it('Test for sortArrayOfObjectsByKey with wrong params', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey(
+        [{name: 'Bob'}, {name: 'Dylan'}, {pet: 'Paul'}], 'name'
+      )
+      .tobe('Some elements in the array does not have the name property'));
+    });
+
+    it('Test for sortArrayOfObjectsByKey with wrong params', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey(
+        [{pet: 'lizzard'}, {pet: 'dog'}, {pet: 'bear'}], 'name'
+      )
+      .tobe('Some elements in the array does not have the name property'));
+    });
+
+    it('Test for sortArrayOfObjectsByKey with wrong params', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey(
+        [{pet: 'lizzard'}, {pet: 'dog'}, {pet: 'bear'}], ''
+      )
+      .tobe('The second param should be an string'));
+    });
+
+    it('Test for sortArrayOfObjectsByKey with correct params', () => {
+      expect(complexOperations.sortArrayOfObjectsByKey(
+        [{name: 'Bob'}, {name: 'Dylan'}, {name: 'Paul'}], 'name'
+      ).toStrictEqual([
+          {name: 'Bob'}, {name: 'Dylan'}, {name: 'Paul'}
+        ])
+      );
     });
   });
 
