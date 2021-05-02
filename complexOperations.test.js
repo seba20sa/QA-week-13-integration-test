@@ -141,8 +141,25 @@ describe('complexOperation - Unit Tests', () => {
   });
 
   decsribe('intersectionBetweenArrays', () => {
-    it('first test for intersectionBetweenArrays', () => {
-
+    it('intersectionBetweenArrays using wrong params', () => {
+      expect(complexOperations.intersectionBetweenArrays()
+      .tobe('The params should be arrays'));
+    });
+    it('intersectionBetweenArrays using wrong params', () => {
+      expect(complexOperations.intersectionBetweenArrays([],2)
+      .tobe('The params should be arrays'));
+    });
+    it('intersectionBetweenArrays using wrong params', () => {
+      expect(complexOperations.intersectionBetweenArrays('lizzard',[1, 3])
+      .tobe('The params should be arrays'));
+    });
+    it('intersectionBetweenArrays using correct params', () => {
+      expect(complexOperations.intersectionBetweenArrays([2,5],[1, 3])
+      .tobe('There are not matching elements'));
+    });
+    it('intersectionBetweenArrays using correct params', () => {
+      expect(complexOperations.intersectionBetweenArrays([1, 2, 7],[1, 2, 5])
+      .tobe([1, 2]));
     });
   });
 
