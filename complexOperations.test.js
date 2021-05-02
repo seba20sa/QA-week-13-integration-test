@@ -207,8 +207,43 @@ describe('complexOperation - Unit Tests', () => {
   });
 
   decsribe('numberOfOddAndEvenNumbers', () => {
-    it('first test for numberOfOddAndEvenNumbers', () => {
-      
+
+    it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
+      expect(complexOperations.numberOfOddAndEvenNumbers()
+      .tobe('The param should be an array'));      
     });
+
+    it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
+      expect(complexOperations.numberOfOddAndEvenNumbers('lizzard')
+      .tobe('The param should be an array'));      
+    });
+
+    it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
+      expect(complexOperations.numberOfOddAndEvenNumbers([1, 'lizzard'])
+      .tobe('The array should have only numbers'));      
+    });
+
+    it('Test for numberOfOddAndEvenNumbers with correct params', () => {
+      expect(
+        complexOperations.numberOfOddAndEvenNumbers([1, 3, 5, 7])
+        .toStrictEqual({ even: 0, odd: 4 })
+      );      
+    });
+
+    it('Test for numberOfOddAndEvenNumbers with correct params', () => {
+      expect(
+        complexOperations.numberOfOddAndEvenNumbers([2, 4, 8])
+        .toStrictEqual({ even: 3, odd: 0 })
+      );      
+    });
+
+    it('Test for numberOfOddAndEvenNumbers with correct params', () => {
+      expect(
+        complexOperations.numberOfOddAndEvenNumbers([1, 2, 3, 5])
+        .toStrictEqual({ even: 1, odd: 3 })
+      );      
+    });
+
   });
+  
 });
