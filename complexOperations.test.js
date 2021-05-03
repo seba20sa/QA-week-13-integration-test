@@ -3,7 +3,7 @@ import * as complexOperations from './complexOperations';
 // import * as basicOperations from './basicOperations';
 
 describe('complexOperation - Unit Tests', () => {
-  decsribe('checkEmail', () => {
+  describe('checkEmail', () => {
 
 
     it('test for undefined email', () => {
@@ -67,7 +67,7 @@ describe('complexOperation - Unit Tests', () => {
     
   });
 
-  decsribe('calculateArea', () => {
+  describe('calculateArea', () => {
 
     it('test for undefined figure', () => {
       expect(complexOperations.calculateArea()).tobe('undefined is not supported');
@@ -113,7 +113,7 @@ describe('complexOperation - Unit Tests', () => {
 
   });
 
-  decsribe('sumGratherThan', () => {
+  describe('sumGratherThan', () => {
     it('test with wrong param', () => {
       expect(complexOperations.sumGratherThan())
       .toBe('The params should be numbers');
@@ -146,7 +146,7 @@ describe('complexOperation - Unit Tests', () => {
 
   });
 
-  decsribe('intersectionBetweenArrays', () => {
+  describe('intersectionBetweenArrays', () => {
     it('intersectionBetweenArrays using wrong params', () => {
       expect(complexOperations.intersectionBetweenArrays()
       .tobe('The params should be arrays'));
@@ -169,7 +169,7 @@ describe('complexOperation - Unit Tests', () => {
     });
   });
 
-  decsribe('sortArrayOfObjectsByKey', () => {
+  describe('sortArrayOfObjectsByKey', () => {
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(undefined, 'pet')
       .tobe('The param should be an array'));
@@ -212,7 +212,7 @@ describe('complexOperation - Unit Tests', () => {
     });
   });
 
-  decsribe('numberOfOddAndEvenNumbers', () => {
+  describe('numberOfOddAndEvenNumbers', () => {
 
     it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
       expect(complexOperations.numberOfOddAndEvenNumbers()

@@ -55,9 +55,6 @@ describe ('complexOperations - Mock tests', ()=>{
         });
     });
 
-
-
-
     describe ('numberOfOddAndEvenNumbers', ()=>{
         it('numberOfOddAndEvenNumbers - MOCK FUNCTION ', () => {
             expect(
@@ -67,7 +64,5 @@ describe ('complexOperations - Mock tests', ()=>{
             ).toEqual({ even: 5, odd: 5 });      
         });
     });
-
-
 
 });
