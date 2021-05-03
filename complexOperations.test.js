@@ -70,41 +70,41 @@ describe('complexOperation - Unit Tests', () => {
   describe('calculateArea', () => {
 
     it('test for undefined figure', () => {
-      expect(complexOperations.calculateArea()).tobe('undefined is not supported');
+      expect(complexOperations.calculateArea()).toBe('undefined is not supported');
 
     });
 
     it('test for wrong figure', () => {
       expect(complexOperations.calculateArea('dog', 1, 3))
-      .tobe('dog is not supported');
+      .toBe('dog is not supported');
     });
 
     it('test for no measurements', () => {
       expect(complexOperations.calculateArea('circle'))
-      .tobe('number1 and number2 should be numbers');
+      .toBe('number1 and number2 should be numbers');
     });
 
     it('test for first wrong measurements', () => {
       expect(complexOperations.calculateArea('circle', 'dog', 3))
-      .tobe('number1 and number2 should be numbers');
+      .toBe('number1 and number2 should be numbers');
     });
 
     it('test for second wrong measurements', () => {
       expect(complexOperations.calculateArea('circle', 2, 'lizzard'))
-      .tobe('number1 and number2 should be numbers');
+      .toBe('number1 and number2 should be numbers');
     });
 
     it('test with correct measurements', () => {
-      expect(complexOperations.calculateArea('square', 2, 5)).toEqual(10);
+      expect(complexOperations.calculateArea('square', 2, 4)).toEqual(4);
     });
     it('test with correct measurements', () => {
-      expect(complexOperations.calculateArea('circle', 3, 1)).toEqual(3);
+      expect(complexOperations.calculateArea('circle', 3)).toBeCloseTo(28.3);
     });
     it('test with correct measurements', () => {
-      expect(complexOperations.calculateArea('triangle', 3, 1)).toEqual(3);
+      expect(complexOperations.calculateArea('triangle', 3, 1)).toEqual(1.5);
     });
     it('test with correct measurements', () => {
-      expect(complexOperations.calculateArea('rectangle', 3, 1)).toEqual(3);
+      expect(complexOperations.calculateArea('rectangle', 3, 2)).toEqual(6);
     });
 
     it('test with correct measurements', () => {
@@ -149,35 +149,35 @@ describe('complexOperation - Unit Tests', () => {
   describe('intersectionBetweenArrays', () => {
     it('intersectionBetweenArrays using wrong params', () => {
       expect(complexOperations.intersectionBetweenArrays()
-      .tobe('The params should be arrays'));
+      .toBe('The params should be arrays'));
     });
     it('intersectionBetweenArrays using wrong params', () => {
       expect(complexOperations.intersectionBetweenArrays([],2)
-      .tobe('The params should be arrays'));
+      .toBe('The params should be arrays'));
     });
     it('intersectionBetweenArrays using wrong params', () => {
       expect(complexOperations.intersectionBetweenArrays('lizzard',[1, 3])
-      .tobe('The params should be arrays'));
+      .toBe('The params should be arrays'));
     });
     it('intersectionBetweenArrays using correct params', () => {
       expect(complexOperations.intersectionBetweenArrays([2,5],[1, 3])
-      .tobe('There are not matching elements'));
+      .toBe('There are not matching elements'));
     });
     it('intersectionBetweenArrays using correct params', () => {
       expect(complexOperations.intersectionBetweenArrays([1, 2, 7],[1, 2, 5])
-      .tobe([1, 2]));
+      .toBe([1, 2]));
     });
   });
 
   describe('sortArrayOfObjectsByKey', () => {
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(undefined, 'pet')
-      .tobe('The param should be an array'));
+      .toBe('The param should be an array'));
     });
 
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey()
-      .tobe('The param should be an array'));
+      .toBe('The param should be an array'));
     });
 
 
@@ -185,27 +185,27 @@ describe('complexOperation - Unit Tests', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(
         [{name: 'Bob'}, {name: 'Dylan'}, {pet: 'Paul'}], 'name'
       )
-      .tobe('Some elements in the array does not have the name property'));
+      .toBe('Some elements in the array does not have the name property'));
     });
 
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(
         [{pet: 'lizzard'}, {pet: 'dog'}, {pet: 'bear'}], 'name'
       )
-      .tobe('Some elements in the array does not have the name property'));
+      .toBe('Some elements in the array does not have the name property'));
     });
 
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(
         [{pet: 'lizzard'}, {pet: 'dog'}, {pet: 'bear'}], ''
       )
-      .tobe('The second param should be an string'));
+      .toBe('The second param should be an string'));
     });
 
     it('Test for sortArrayOfObjectsByKey with correct params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(
         [{name: 'Bob'}, {name: 'Dylan'}, {name: 'Paul'}], 'name'
-      ).toStrictEqual([
+      ).toEqual([
           {name: 'Bob'}, {name: 'Dylan'}, {name: 'Paul'}
         ])
       );
@@ -216,37 +216,37 @@ describe('complexOperation - Unit Tests', () => {
 
     it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
       expect(complexOperations.numberOfOddAndEvenNumbers()
-      .tobe('The param should be an array'));      
+      .toBe('The param should be an array'));      
     });
 
     it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
       expect(complexOperations.numberOfOddAndEvenNumbers('lizzard')
-      .tobe('The param should be an array'));      
+      .toBe('The param should be an array'));      
     });
 
     it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
       expect(complexOperations.numberOfOddAndEvenNumbers([1, 'lizzard'])
-      .tobe('The array should have only numbers'));      
+      .toBe('The array should have only numbers'));      
     });
 
     it('Test for numberOfOddAndEvenNumbers with correct params', () => {
       expect(
         complexOperations.numberOfOddAndEvenNumbers([1, 3, 5, 7])
-        .toStrictEqual({ even: 0, odd: 4 })
+        .toEqual({ even: 0, odd: 4 })
       );      
     });
 
     it('Test for numberOfOddAndEvenNumbers with correct params', () => {
       expect(
         complexOperations.numberOfOddAndEvenNumbers([2, 4, 8])
-        .toStrictEqual({ even: 3, odd: 0 })
+        .toEqual({ even: 3, odd: 0 })
       );      
     });
 
     it('Test for numberOfOddAndEvenNumbers with correct params', () => {
       expect(
         complexOperations.numberOfOddAndEvenNumbers([1, 2, 3, 5])
-        .toStrictEqual({ even: 1, odd: 3 })
+        .toEqual({ even: 1, odd: 3 })
       );      
     });
 

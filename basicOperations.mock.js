@@ -18,7 +18,7 @@ let sortArrayByKey = jest.fn().mockReturnValue(
     'cartItem'
 )
 let getEvenNumbersFromArray = jest.fn().mockReturnValue([0, 2, 4, 6, 8])
-let getEvenNumbersFromArray = jest.fn().mockReturnValue([1, 3, 5, 7, 9])
+let getOddNumbersFromArray = jest.fn().mockReturnValue([1, 3, 5, 7, 9])
 
 const funMock = jest.mock('./basicOperations', () => {
     return {
