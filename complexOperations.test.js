@@ -58,6 +58,12 @@ describe('complexOperation - Unit Tests', () => {
         'The email is invalid'
       );      
     });
+
+    it('test for correctly formated email', () => {
+      expect(complexOperations.checkEmail('seba20sa@gmail.com')).toBe(
+        'The email is valid'
+      );      
+    });
     
   });
 
