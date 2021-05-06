@@ -7,37 +7,49 @@ describe('complexOperation - Unit Tests', () => {
 
 
     it('test for undefined email', () => {
-      expect(complexOperations.checkEmail()).toBe(
+      expect(
+        complexOperations.checkEmail()
+        ).toBe(
         'The email should be an string'
       );      
     });
 
     it('test for empty email', () => {
-      expect(complexOperations.checkEmail('')).toBe(
+      expect(
+        complexOperations.checkEmail('')
+        ).toBe(
         'The email should be an string'
       );      
     });
 
     it('test for wrongly formated email', () => {
-      expect(complexOperations.checkEmail(42)).toBe(
+      expect(
+        complexOperations.checkEmail(42)
+        ).toBe(
         'The email should be an string'
       );      
     });
 
     it('test for wrongly formated email', () => {
-      expect(complexOperations.checkEmail('seba20sa')).toBe(
+      expect(
+        complexOperations.checkEmail('seba20sa')
+        ).toBe(
         'The email is invalid'
       );      
     });
 
     it('test for wrongly formated email', () => {
-      expect(complexOperations.checkEmail('@')).toBe(
+      expect(
+        complexOperations.checkEmail('@')
+        ).toBe(
         'The email is invalid'
       );      
     });
 
     it('test for wrongly formated email', () => {
-      expect(complexOperations.checkEmail('@.com')).toBe(
+      expect(
+        complexOperations.checkEmail('@.com')
+        ).toBe(
         'The email is invalid'
       );      
     });
@@ -148,87 +160,83 @@ describe('complexOperation - Unit Tests', () => {
 
   describe('intersectionBetweenArrays', () => {    
     it('intersectionBetweenArrays using wrong params', () => {
-      expect(complexOperations.intersectionBetweenArrays([],2).toBe('The params should be arrays'));
+      expect(complexOperations.intersectionBetweenArrays([],2)).toBe('The params should be arrays');
     });
     it('intersectionBetweenArrays using wrong params', () => {
-      expect(complexOperations.intersectionBetweenArrays('lizzard',[1, 3]).toBe('The params should be arrays'));
+      expect(complexOperations.intersectionBetweenArrays('lizzard',[1, 3])).toBe('The params should be arrays');
     });
     it('intersectionBetweenArrays using correct params', () => {
-      expect(complexOperations.intersectionBetweenArrays([2,5],[1, 3]).toBe('There are not matching elements'));
+      expect(complexOperations.intersectionBetweenArrays([2,5],[1, 3])).toBe('There are not matching elements');
     });
     it('intersectionBetweenArrays using correct params', () => {
-      expect(complexOperations.intersectionBetweenArrays([1, 2, 7],[1, 2, 5]).toBe([1, 2]));
+      expect(complexOperations.intersectionBetweenArrays([1, 2, 7],[1, 2, 5])).toStrictEqual([1, 2]);
     });
   });
 
   describe('sortArrayOfObjectsByKey', () => {
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
-      expect(complexOperations.sortArrayOfObjectsByKey(undefined, 'pet').toBe('The param should be an array'));
+      expect(complexOperations.sortArrayOfObjectsByKey(undefined, 'pet')).toBe('The first param should be an array');
     });
 
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
-      expect(complexOperations.sortArrayOfObjectsByKey().toBe('The param should be an array'));
+      expect(complexOperations.sortArrayOfObjectsByKey()).toBe('The first param should be an array');
     });
 
 
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(
         [{name: 'Bob'}, {name: 'Dylan'}, {pet: 'Paul'}], 'name'
-      ).toBe('Some elements in the array does not have the name property'));
+      )).toBe('Some elements in the array does not have the name property');
     });
 
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(
         [{pet: 'lizzard'}, {pet: 'dog'}, {pet: 'bear'}], 'name'
-      ).toBe('Some elements in the array does not have the name property'));
+      )).toBe('Some elements in the array does not have the name property');
     });
 
     it('Test for sortArrayOfObjectsByKey with wrong params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(
         [{pet: 'lizzard'}, {pet: 'dog'}, {pet: 'bear'}], ''
-      ).toBe('The second param should be an string'));
+      )).toBe('The second param should be an string');
     });
 
     it('Test for sortArrayOfObjectsByKey with correct params', () => {
       expect(complexOperations.sortArrayOfObjectsByKey(
         [{name: 'Bob'}, {name: 'Dylan'}, {name: 'Paul'}], 'name'
-      ).toEqual([
+      )).toEqual([
           {name: 'Bob'}, {name: 'Dylan'}, {name: 'Paul'}
-        ])
-      );
+        ]);
     });
   });
 
   describe('numberOfOddAndEvenNumbers', () => {
 
     it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
-      expect(complexOperations.numberOfOddAndEvenNumbers().toBe('The param should be an array'));      
+      expect(complexOperations.numberOfOddAndEvenNumbers()).toBe('The param should be an array');      
     });
 
     it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
-      expect(complexOperations.numberOfOddAndEvenNumbers('lizzard').toBe('The param should be an array'));      
+      expect(complexOperations.numberOfOddAndEvenNumbers('lizzard')).toBe('The param should be an array');      
     });
 
     it('Test for numberOfOddAndEvenNumbers with wrong params', () => {
-      expect(complexOperations.numberOfOddAndEvenNumbers([1, 'lizzard']).toBe('The array should have only numbers'));      
+      expect(complexOperations.numberOfOddAndEvenNumbers([1, 'lizzard'])).toBe('The array should have only numbers');      
     });
 
     it('Test for numberOfOddAndEvenNumbers with correct params', () => {
       expect(
-        complexOperations.numberOfOddAndEvenNumbers([1, 3, 5, 7]).toEqual({ even: 0, odd: 4 })
-      );      
+        complexOperations.numberOfOddAndEvenNumbers([1, 3, 5, 7])).toEqual({ even: 0, odd: 4 });      
     });
 
     it('Test for numberOfOddAndEvenNumbers with correct params', () => {
       expect(
-        complexOperations.numberOfOddAndEvenNumbers([2, 4, 8]).toEqual({ even: 3, odd: 0 })
-      );      
+        complexOperations.numberOfOddAndEvenNumbers([2, 4, 8])).toEqual({ even: 3, odd: 0 });      
     });
 
     it('Test for numberOfOddAndEvenNumbers with correct params', () => {
       expect(
-        complexOperations.numberOfOddAndEvenNumbers([1, 2, 3, 5]).toEqual({ even: 1, odd: 3 })
-      );      
+        complexOperations.numberOfOddAndEvenNumbers([1, 2, 3, 5])).toEqual({ even: 1, odd: 3 });      
     });
 
   });

@@ -5,11 +5,11 @@ let isString = jest.fn().mockReturnValue(true);
 let validateEmail = jest.fn().mockReturnValue(true);
 let sum = jest.fn().mockReturnValue(7);
 let multip = jest.fn().mockReturnValue(14);
-let division = jest.fn().mockReturnValue(1);
+let division = jest.fn().mockReturnValue(2);
 let exponent = jest.fn().mockReturnValue(2);
 let isSupportedFigure = jest.fn().mockReturnValue(true);
 let arrayElementsAreObjectWithKey = jest.fn().mockReturnValue(true);
-let arrayIntersection = jest.fn().mockReturnValue([2,3]);
+let arrayIntersection = jest.fn().mockReturnValue([2]);
 let sortArrayByKey = jest.fn().mockReturnValue(
     [{cartItem: 'bread'}, {cartItem: 'cookies'}, {cartItem: 'miller lite'}],
     'cartItem'

@@ -1,4 +1,4 @@
-import funmock from './operations.mock';
+import funMock from './operations.mock';
 
 
 import * as complexOperations from './complexOperations';
@@ -24,14 +24,9 @@ describe ('complexOperations - Mock tests', ()=>{
     describe ('calculateArea', ()=>{
         it('calculateArea - MOCK FUNCTION - rectangle base of 7 height of 2 area is 14 ', () => {
             expect(
-                complexOperations.calculateArea(7,2,'rectangle')
+                complexOperations.calculateArea('rectangle', 7, 2)
             ).toEqual(14);      
-        });
-        it('calculateArea - MOCK FUNCTION - square base and height of 2 each ', () => {
-            expect(
-                complexOperations.calculateArea(2,2,'square')
-            ).toEqual(4);      
-        });
+        });        
     });
 
 
@@ -54,12 +49,7 @@ describe ('complexOperations - Mock tests', ()=>{
             expect(
                 complexOperations.intersectionBetweenArrays([1, 2, 4, 5, 6], [0, 2, 7])
             ).toEqual([2]);      
-        });
-        it('intersectionBetweenArrays - MOCK FUNCTION ', () => {
-            expect(
-                complexOperations.intersectionBetweenArrays([1, 4, 5, 6], [0, 2, 7])
-            ).not.toEqual([2]);      
-        });
+        });        
     });
 
 
@@ -67,7 +57,7 @@ describe ('complexOperations - Mock tests', ()=>{
         it('sortArrayOfObjectsByKey - MOCK FUNCTION ', () => {
             expect(
                 complexOperations.sortArrayOfObjectsByKey(
-                    [{cartItem: 'bread'}, {cartItem: 'cookies'}, {cartItem: 'miller lite'}, 'cartItem']
+                    [{cartItem: 'bread'}, {cartItem: 'cookies'}, {cartItem: 'miller lite'}], 'cartItem'
                 )
             ).toStrictEqual([{cartItem: 'bread'}, {cartItem: 'cookies'}, {cartItem: 'miller lite'}]);      
         });
