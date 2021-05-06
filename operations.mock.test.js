@@ -1,6 +1,7 @@
-import funMock from './basicOperations.mock'
+import funmock from './operations.mock';
 
-import * as complexOperations from './complexOperations'
+
+import * as complexOperations from './complexOperations';
 
 describe ('complexOperations - Mock tests', ()=>{
     describe ('checkEmnail', ()=>{
@@ -11,6 +12,13 @@ describe ('complexOperations - Mock tests', ()=>{
               'The email is valid'
             );      
         });
+        it('test for checkEmnail - MOCK FUNCTION', () => {
+            expect(
+                complexOperations.checkEmail('seba__sg@hotmail.com')
+            ).toBe(
+              'The email is valid'
+            );
+        });
     });
 
     describe ('calculateArea', ()=>{
@@ -18,6 +26,11 @@ describe ('complexOperations - Mock tests', ()=>{
             expect(
                 complexOperations.calculateArea(7,2,'rectangle')
             ).toEqual(14);      
+        });
+        it('calculateArea - MOCK FUNCTION - square base and height of 2 each ', () => {
+            expect(
+                complexOperations.calculateArea(2,2,'square')
+            ).toEqual(4);      
         });
     });
 
@@ -39,8 +52,13 @@ describe ('complexOperations - Mock tests', ()=>{
     describe ('intersectionBetweenArrays', ()=>{
         it('intersectionBetweenArrays - MOCK FUNCTION ', () => {
             expect(
-                complexOperations.intersectionBetweenArrays([1, 2, 3, 4, 5, 6], [0, 2, 3, 7])
-            ).toStrictEqual([2,3]);      
+                complexOperations.intersectionBetweenArrays([1, 2, 4, 5, 6], [0, 2, 7])
+            ).toEqual([2]);      
+        });
+        it('intersectionBetweenArrays - MOCK FUNCTION ', () => {
+            expect(
+                complexOperations.intersectionBetweenArrays([1, 4, 5, 6], [0, 2, 7])
+            ).not.toEqual([2]);      
         });
     });
 
@@ -49,9 +67,9 @@ describe ('complexOperations - Mock tests', ()=>{
         it('sortArrayOfObjectsByKey - MOCK FUNCTION ', () => {
             expect(
                 complexOperations.sortArrayOfObjectsByKey(
-                    [{cartItem: 'miller lite'}, {cartItem: 'buns'}, {cartItem: 'bread'}]
+                    [{cartItem: 'bread'}, {cartItem: 'cookies'}, {cartItem: 'miller lite'}, 'cartItem']
                 )
-            ).toStrictEqual([{cartItem: 'bread'}, {cartItem: 'miller lite'}, {cartItem: 'buns'}]);      
+            ).toStrictEqual([{cartItem: 'bread'}, {cartItem: 'cookies'}, {cartItem: 'miller lite'}]);      
         });
     });
 
